@@ -1,0 +1,18 @@
+[package]
+name = "memscan"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+description = "通用进程内存搜索引擎（Cheat Engine 风格）。平台无关核心；Windows/macOS/Linux 的读写与内存区域枚举由 process-memory + proc-maps 提供。"
+
+[dependencies]
+thiserror.workspace = true
+memchr.workspace = true
+rayon.workspace = true
+
+# 跨平台底层：process-memory（读/写）+ proc-maps（内存区域）+ sysinfo（进程枚举）
+# 覆盖 Windows / macOS / Linux，避免自己维护各平台 FFI。
+[target.'cfg(any(windows, target_os = "linux", target_os = "macos"))'.dependencies]
+process-memory = "0.5"
+proc-maps = "0.5"
+sysinfo = "0.39"

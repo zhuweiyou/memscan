@@ -1,0 +1,25 @@
+[workspace]
+resolver = "2"
+members = [
+    "crates/memscan",
+    "crates/wxmemscan",
+]
+
+[workspace.package]
+version = "0.1.0"
+edition = "2021"
+license = "MIT"
+authors = ["memscan contributors"]
+repository = "https://github.com/zhuweiyou/memscan"
+
+[workspace.dependencies]
+thiserror = "2"
+memchr = "2"
+rayon = "1"
+
+[profile.release]
+opt-level = 3
+lto = "thin"
+codegen-units = 1
+panic = "abort"
+strip = true

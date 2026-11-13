@@ -1,0 +1,18 @@
+[package]
+name = "wxmemscan"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+description = "微信 / 微信小程序进程内存搜索 GUI（memscan 核心包的完整使用示例，也可直接当工具使用）。"
+
+[lib]
+name = "wxmemscan"
+path = "src/lib.rs"
+
+[[bin]]
+name = "wxmemscan"
+path = "src/main.rs"
+
+[dependencies]
+memscan = { path = "../memscan" }
+eframe = { version = "0.37", default-features = true }

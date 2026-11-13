@@ -1,0 +1,27 @@
+# ---- Rust build artifacts ----
+/target
+**/*.rs.bk
+*.pdb
+*.rlib
+*.rmeta
+*.d
+
+# ---- Runtime output / temp captures ----
+*.log
+/gui-*.png
+/gui-screenshot.png
+/capture-gui.ps1
+wxmemscan_*.log
+
+# ---- Local reference sources (cloned for study, not part of the project) ----
+/ref-ce/
+/rustup-init.exe
+/copilot-menu-backup/
+
+# ---- OS / editor ----
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+*.swp
+*~
